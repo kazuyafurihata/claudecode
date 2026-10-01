@@ -1,0 +1,315 @@
+<title>{{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#EDEFEE; --surface:#FBFCFB; --surface-2:#F4F6F5;
+  --ink:#16201F; --ink-2:#3D4A48; --muted:#697876; --faint:#8B9997;
+  --rule:#D2D8D6; --rule-soft:#E2E7E5;
+  --ai:#28457A;            /* 藍 */
+  --ai-soft:#E4EAF4;
+  --yama:#8A6408;          /* 山吹（文字用に沈めた値） */
+  --yama-bright:#B8860F;
+  --yama-soft:#F5EDD8;
+  --shadow:0 1px 2px rgba(22,32,31,.05), 0 8px 24px -18px rgba(22,32,31,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101617; --surface:#171F20; --surface-2:#1D2627;
+    --ink:#E7ECEA; --ink-2:#C2CCCA; --muted:#8C9C99; --faint:#6F7E7C;
+    --rule:#2A3536; --rule-soft:#222C2D;
+    --ai:#8FAEE2; --ai-soft:#1C2942;
+    --yama:#DFAE40; --yama-bright:#E8BC55; --yama-soft:#332811;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101617; --surface:#171F20; --surface-2:#1D2627;
+  --ink:#E7ECEA; --ink-2:#C2CCCA; --muted:#8C9C99; --faint:#6F7E7C;
+  --rule:#2A3536; --rule-soft:#222C2D;
+  --ai:#8FAEE2; --ai-soft:#1C2942;
+  --yama:#DFAE40; --yama-bright:#E8BC55; --yama-soft:#332811;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Noto Sans JP",-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px 96px}
+
+/* ── ヘッダ ── */
+header{padding:56px 0 32px; border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 14px;
+}
+h1{
+  font-family:"Zen Old Mincho",serif; font-weight:900;
+  font-size:clamp(30px,5vw,46px); line-height:1.25; letter-spacing:.01em;
+  margin:0 0 16px; text-wrap:balance;
+}
+.lede{max-width:60ch; color:var(--ink-2); font-size:15.5px; margin:0}
+.lede b{font-weight:700; color:var(--ink)}
+
+/* ── 集計ストリップ ── */
+.tally{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule);
+  margin:28px 0 0;
+}
+.tally div{background:var(--surface); padding:16px 18px}
+.tally dt{
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 6px;
+}
+.tally dd{
+  margin:0; font-family:"Zen Old Mincho",serif; font-weight:700;
+  font-size:29px; line-height:1.1; font-variant-numeric:tabular-nums;
+}
+/* ── 書き出し（CSV・スプレッドシート） ── */
+.export{display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 0; align-items:center}
+.btn{
+  display:inline-flex; align-items:center; gap:7px; padding:9px 16px;
+  font:500 13.5px/1.2 "Noto Sans JP",sans-serif; text-decoration:none; cursor:pointer;
+  border:1px solid var(--ai); color:var(--ai); background:var(--surface);
+}
+.btn:hover{background:var(--ai-soft)}
+.btn--primary{background:var(--ai); color:var(--surface)}
+.btn--primary:hover{background:var(--ai); opacity:.88}
+.export-note{font-size:12px; color:var(--muted)}
+.tally dd small{font-family:"Noto Sans JP",sans-serif; font-size:12px; font-weight:400; color:var(--muted); margin-left:5px}
+
+/* ── セクション ── */
+section{margin-top:56px}
+h2{
+  font-family:"Zen Old Mincho",serif; font-weight:700; font-size:21px;
+  margin:0 0 6px; letter-spacing:.02em;
+}
+.sub{color:var(--muted); font-size:13.5px; margin:0 0 22px; max-width:62ch}
+
+/* ── 判定基準 ── */
+.criteria{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;
+}
+.crit{
+  background:var(--surface); border:1px solid var(--rule); padding:18px 20px;
+  box-shadow:var(--shadow);
+}
+.crit h3{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ai);
+  margin:0 0 9px; padding-bottom:9px; border-bottom:1px solid var(--rule-soft);
+}
+.crit p{margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.7}
+
+/* ── フィルタ ── */
+.controls{
+  position:sticky; top:0; z-index:20; background:var(--paper);
+  padding:14px 0 12px; border-bottom:1px solid var(--rule);
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+}
+.controls::before{
+  content:""; position:absolute; inset:0 -24px; background:var(--paper); z-index:-1;
+  border-bottom:1px solid var(--rule);
+}
+.chip{
+  font-family:"Noto Sans JP",sans-serif; font-size:12.5px; font-weight:500;
+  padding:5px 12px; border:1px solid var(--rule); background:var(--surface);
+  color:var(--ink-2); cursor:pointer; border-radius:2px; line-height:1.6;
+  transition:background .12s,border-color .12s,color .12s;
+}
+.chip:hover{border-color:var(--ai); color:var(--ai)}
+.chip[aria-pressed="true"]{background:var(--ai); border-color:var(--ai); color:var(--surface)}
+:root[data-theme="dark"] .chip[aria-pressed="true"],
+:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#101617}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .chip[aria-pressed="true"]{color:#FBFCFB}}
+.chip:focus-visible{outline:2px solid var(--yama-bright); outline-offset:2px}
+#q{
+  flex:1; min-width:160px; font:inherit; font-size:13px; padding:6px 11px;
+  border:1px solid var(--rule); background:var(--surface); color:var(--ink); border-radius:2px;
+}
+#q:focus-visible{outline:2px solid var(--ai); outline-offset:-1px; border-color:var(--ai)}
+.count{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; margin-left:auto; white-space:nowrap;
+}
+
+/* ── Tier ── */
+.tier{margin-top:38px}
+.tier-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; padding-bottom:9px; border-bottom:2px solid var(--ink)}
+.tier-mark{
+  font-family:"Zen Old Mincho",serif; font-weight:900; font-size:27px; line-height:1;
+  width:40px; height:40px; display:grid; place-items:center; flex:none;
+  border:2px solid var(--ink); color:var(--ink);
+}
+.tier--s .tier-mark{background:var(--yama-soft); border-color:var(--yama); color:var(--yama)}
+.tier--a .tier-mark{background:var(--ai-soft); border-color:var(--ai); color:var(--ai)}
+.tier-name{font-family:"Zen Old Mincho",serif; font-weight:700; font-size:19px; margin:0}
+.tier-why{font-size:12.5px; color:var(--muted); flex-basis:100%; margin:5px 0 0}
+
+/* ── 行 ── */
+.rows{border-bottom:1px solid var(--rule)}
+.row{
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,10rem) minmax(0,1fr);
+  gap:4px 20px; padding:13px 4px; border-bottom:1px solid var(--rule-soft); align-items:start;
+}
+.row:hover{background:var(--surface-2)}
+.co{display:flex; align-items:baseline; gap:7px; flex-wrap:wrap; min-width:0}
+.co-name{font-weight:700; font-size:14.5px; line-height:1.5}
+.who{min-width:0}
+.person{font-size:13px; color:var(--ink-2); line-height:1.6; margin-top:1px}
+.dom{
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--faint);
+  word-break:break-all; grid-column:1; line-height:1.5;
+}
+.ind{font-size:12.5px; color:var(--ink-2); line-height:1.6}
+.note{font-size:12.5px; color:var(--muted); line-height:1.7; min-width:0}
+.note b{color:var(--ink-2); font-weight:500}
+
+.tag{
+  font-family:"IBM Plex Mono",monospace; font-size:9.5px; font-weight:600;
+  letter-spacing:.08em; padding:1px 5px; border:1px solid var(--rule);
+  color:var(--muted); flex:none; position:relative; top:-1px;
+}
+.tag--fact{border-color:var(--ai); color:var(--ai); background:var(--ai-soft)}
+.tag--aio{border-color:var(--yama); color:var(--yama); background:var(--yama-soft)}
+.tag--ask{border-style:dashed}
+
+.empty{padding:30px 4px; color:var(--muted); font-size:13.5px}
+
+/* ── 除外 ── */
+.excl{
+  background:var(--surface); border:1px solid var(--rule); padding:20px 22px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:20px;
+}
+.excl h3{
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  margin:0 0 8px; padding-bottom:7px; border-bottom:1px solid var(--rule-soft);
+}
+.excl ul{margin:0; padding:0; list-style:none; font-size:12.5px; color:var(--ink-2)}
+.excl li{padding:2px 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px; word-break:break-all}
+
+footer{
+  margin-top:56px; padding-top:22px; border-top:1px solid var(--rule);
+  font-size:12.5px; color:var(--muted); max-width:70ch;
+}
+footer p{margin:0 0 9px}
+footer strong{color:var(--ink-2); font-weight:700}
+
+@media (max-width:720px){
+  .row{grid-template-columns:1fr; gap:2px}
+  .dom{grid-column:auto}
+  .count{margin-left:0; flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">{{EYEBROW}}</p>
+  <h1>{{TITLE}}</h1>
+  <p class="lede">{{LEDE}}</p>
+
+  <dl class="tally">
+{{TALLY}}
+  </dl>
+{{EXPORT}}
+</header>
+
+<section>
+  <h2>相性をどう判定したか</h2>
+  <p class="sub">{{CRITERIA_SUB}}</p>
+  <div class="criteria">
+{{CRITERIA}}
+  </div>
+</section>
+
+<section>
+  <h2>ランキング</h2>
+  <p class="sub">業種で絞り込むか、社名・ドメインで検索できる。<span class="tag tag--fact">確</span> はメールの件名から業務内容が確認できたもの、<span class="tag tag--ask">推</span> は推定、<span class="tag tag--aio">AIO</span> はAIOの商談がすでに動いている先。</p>
+
+  <div class="controls" role="group" aria-label="絞り込み">
+{{CHIPS}}
+    <input id="q" type="search" placeholder="社名・ドメインで検索" aria-label="社名・ドメインで検索">
+    <span class="count" id="count"></span>
+  </div>
+
+{{TIERS}}
+
+  <p class="empty" id="empty" hidden>該当する会社がありません。フィルタか検索語を変えてください。</p>
+</section>
+
+<section>
+  <h2>除外したもの</h2>
+  <p class="sub">次のものを母集団から外している。除外の内訳を残しておくので、判断が違えば戻せる。</p>
+  <div class="excl">
+{{EXCLUSIONS}}
+  </div>
+</section>
+
+<footer>
+{{FOOTER}}
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var q = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+  var tiers = Array.prototype.slice.call(document.querySelectorAll('.tier'));
+  var filter = 'all';
+
+  function apply(){
+    var term = q.value.trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(r){
+      var okCat = (filter === 'all') || (r.dataset.cat === filter);
+      var okTerm = !term || r.textContent.toLowerCase().indexOf(term) !== -1;
+      var vis = okCat && okTerm;
+      r.hidden = !vis;
+      if (vis) shown++;
+    });
+    tiers.forEach(function(t){
+      var any = Array.prototype.some.call(t.querySelectorAll('.row'), function(r){ return !r.hidden; });
+      t.hidden = !any;
+    });
+    countEl.textContent = shown + ' / ' + rows.length + ' 社';
+    emptyEl.hidden = shown !== 0;
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      filter = c.dataset.f;
+      chips.forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+  apply();
+
+  // CSVダウンロード。Excelで日本語が化けないよう先頭にBOMを付ける
+  var dl = document.getElementById('dl-csv');
+  var src = document.getElementById('csv-data');
+  if (dl && src) {
+    dl.addEventListener('click', function(){
+      var body = src.textContent.replace(/^\s+/, '').replace(/\r?\n/g, '\r\n');
+      var blob = new Blob(['﻿' + body], {type: 'text/csv;charset=utf-8'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = dl.dataset.filename || 'ledger.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    });
+  }
+})();
+</script>
