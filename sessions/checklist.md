@@ -1,9 +1,9 @@
 # セッション進捗チェックリスト
 
-最終確認: 2026-10-02 16:34 JST（2026-10-02T07:34:00Z）
+最終確認: 2026-10-02 18:34 JST（2026-10-02T09:34:00Z）
 
 ## 🟥 判断待ち
-- [ ] **日報テンプレ・営業実績管理**（⚠️期限: 10/1分の日報が未投稿）／10/1の文面（数字は全部0、補足に1on1が3件）ができている。「これで投稿OK」と返す。持ち越し分（Primus・総和・北瀬様など）で載せるものがあれば伝える。9/30分も未投稿／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
+- [ ] **日報テンプレ・営業実績管理**（⚠️期限: 9/30・10/1・10/2分の日報が未投稿）／10/2分の商談は読み込み済み。返す内容：今日の数字（アポ設定・実施・受注・ヨミ・取次型）、ZYを取次型1件にするか、ワンリーリステッドのつばめリードを数字に載せるか、JAMSAをヨミに載せるか、18時のナンバ難波様の結果。あわせて3日分をまとめて出すか別々に出すかも伝える／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
 - [ ] **aio-target-lister.skill スキル登録**（⚠️期限: 今日10/2に上位3社へ連絡）／1社目への連絡文の下書きを作ってもらうか返す。Tier S〜Aから20社を選ぶ／https://claude.ai/code/session_01ErUc8MSuobUS3vw54iiVxW
 - [ ] **業務のAI化・自動化アドバイス**／「所属の書き方」と「事例の裏取りルール」の2点を直すかどうか返す（9/3から返事待ち）／https://claude.ai/code/session_01TDhcQhdJ6SK2rgjj6ri2Wt
 - [ ] **セミナー経由商談の代理店決定理由**／Slack投稿の元にした商談を9/7分のままにするか、9/4分（CLOQ・SUN）に差し替えるかを返す／https://claude.ai/code/session_011GJMSf63Ac1L596JsGs3B4
@@ -22,10 +22,10 @@
 ---
 
 ### 見直し用メモ（Claudeが使う）
-- 前回確認: 2026-10-02T07:34:00Z
+- 前回確認: 2026-10-02T09:34:00Z
 - 対象外: このセッション（session_01L9GcX3rTy1fQzpYTUgb3CJ）、自動で動いているだけのセッション
 - 各セッションの updated_at（次回はこれより新しいものだけ読む）:
-  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-01T10:30:54Z 🟥
+  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-02T09:32:58Z 🟥
   - session_01ErUc8MSuobUS3vw54iiVxW 2026-10-01T08:49:33Z 🟥
   - session_01TDhcQhdJ6SK2rgjj6ri2Wt 2026-09-03T01:38:41Z 🟥
   - session_011GJMSf63Ac1L596JsGs3B4 2026-09-07T09:01:23Z 🟥
