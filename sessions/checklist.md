@@ -1,8 +1,9 @@
 # セッション進捗チェックリスト
 
-最終確認: 2026-10-05 10:35 JST（2026-10-05T01:35:00Z）
+最終確認: 2026-10-05 18:35 JST（2026-10-05T09:35:00Z）
 
 ## 🟥 判断待ち
+- [ ] **日報テンプレ・営業実績管理**（⚠️今日10/5の日報）／今日の数字（アポ設定・実施・受注・ヨミ・取次型）、リンクソートを実施1件に数えるか、KCPを取次型1件に数えるか、Tribridge土田様の結果の4点を返す／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
 - [ ] **aio-target-lister.skill スキル登録**（⚠️期限: 10/2に上位3社へ連絡→過ぎています）／1社目への連絡文の下書きを作ってもらうか返す。Tier S〜Aから20社を選ぶ／https://claude.ai/code/session_01ErUc8MSuobUS3vw54iiVxW
 - [ ] **AIO受注20件の週間タスク**（今週分）／週次ログがまだ無いので、今週のタスク・担当・延ばすものを伝えて記録してもらう／https://claude.ai/code/session_01Ab9B6iAtybFhguxidp1Nrg
 - [ ] **業務のAI化・自動化アドバイス**／「所属の書き方」と「事例の裏取りルール」の2点を直すかどうか返す（9/3から返事待ち）／https://claude.ai/code/session_01TDhcQhdJ6SK2rgjj6ri2Wt
@@ -15,7 +16,6 @@
 （なし）
 
 ## ✅ 完了
-- [x] **日報テンプレ・営業実績管理**／作業なし（10/2分を投稿済み。10月の数字リセットに合わせて自動の日報ルーティンも更新済み。次は10/5(月)18:30台に自動で起動して数字を聞いてくる。9/28・9/30・10/1分は未投稿のまま）／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
 - [x] **テレミーティングログをSlackに投稿**／作業なし（10/2分を新フォーマットで投稿済み。聞き取りが揺れた人名を言い換えた箇所は、気になれば直してもらう。次回は10/7(水)15:10に自動投稿）／https://claude.ai/code/session_017c3tPkEikstmoSsCc2FJ2W
 - [x] **週次タスク記録とAIリマインド**／作業なし（月曜朝にSlackでリマインドするかは任意）／https://claude.ai/code/session_01FaPKYpTnafSy28guMQb2so
 - [x] **第二SaaSと営業部への投稿振り分け**／作業なし（ISへのフィードバックは新しい形に変更済み）／https://claude.ai/code/session_01MkPgnRaShoGMa1BHyQHqTo
@@ -23,10 +23,10 @@
 ---
 
 ### 見直し用メモ（Claudeが使う）
-- 前回確認: 2026-10-05T01:35:00Z
+- 前回確認: 2026-10-05T09:35:00Z
 - 対象外: このセッション（session_01L9GcX3rTy1fQzpYTUgb3CJ）、自動で動いているだけのセッション
 - 各セッションの updated_at（次回はこれより新しいものだけ読む）:
-  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-02T11:36:08Z ✅
+  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-05T09:32:00Z 🟥
   - session_01ErUc8MSuobUS3vw54iiVxW 2026-10-01T08:49:33Z 🟥
   - session_01TDhcQhdJ6SK2rgjj6ri2Wt 2026-09-03T01:38:41Z 🟥
   - session_011GJMSf63Ac1L596JsGs3B4 2026-09-07T09:01:23Z 🟥
