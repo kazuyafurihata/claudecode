@@ -1,9 +1,9 @@
 # セッション進捗チェックリスト
 
-最終確認: 2026-10-05 18:35 JST（2026-10-05T09:35:00Z）
+最終確認: 2026-10-05 20:35 JST（2026-10-05T11:35:00Z）
 
 ## 🟥 判断待ち
-- [ ] **日報テンプレ・営業実績管理**（⚠️今日10/5の日報）／今日の数字（アポ設定・実施・受注・ヨミ・取次型）、リンクソートを実施1件に数えるか、KCPを取次型1件に数えるか、Tribridge土田様の結果の4点を返す／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
+- [ ] **日報テンプレ・営業実績管理**（⚠️今日10/5の日報）／できた日報案を見て「投稿してOK」を返す。KCPを取次型1件に数えるならそれも伝える／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
 - [ ] **aio-target-lister.skill スキル登録**（⚠️期限: 10/2に上位3社へ連絡→過ぎています）／1社目への連絡文の下書きを作ってもらうか返す。Tier S〜Aから20社を選ぶ／https://claude.ai/code/session_01ErUc8MSuobUS3vw54iiVxW
 - [ ] **AIO受注20件の週間タスク**（今週分）／週次ログがまだ無いので、今週のタスク・担当・延ばすものを伝えて記録してもらう／https://claude.ai/code/session_01Ab9B6iAtybFhguxidp1Nrg
 - [ ] **業務のAI化・自動化アドバイス**／「所属の書き方」と「事例の裏取りルール」の2点を直すかどうか返す（9/3から返事待ち）／https://claude.ai/code/session_01TDhcQhdJ6SK2rgjj6ri2Wt
@@ -23,10 +23,10 @@
 ---
 
 ### 見直し用メモ（Claudeが使う）
-- 前回確認: 2026-10-05T09:35:00Z
+- 前回確認: 2026-10-05T11:35:00Z
 - 対象外: このセッション（session_01L9GcX3rTy1fQzpYTUgb3CJ）、自動で動いているだけのセッション
 - 各セッションの updated_at（次回はこれより新しいものだけ読む）:
-  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-05T09:32:00Z 🟥
+  - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-05T10:54:15Z 🟥
   - session_01ErUc8MSuobUS3vw54iiVxW 2026-10-01T08:49:33Z 🟥
   - session_01TDhcQhdJ6SK2rgjj6ri2Wt 2026-09-03T01:38:41Z 🟥
   - session_011GJMSf63Ac1L596JsGs3B4 2026-09-07T09:01:23Z 🟥
