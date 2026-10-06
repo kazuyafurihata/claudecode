@@ -1,9 +1,10 @@
 # セッション進捗チェックリスト
 
-最終確認: 2026-10-06 18:35 JST（2026-10-06T09:35:00Z）
+最終確認: 2026-10-06 19:35 JST（2026-10-06T10:35:00Z）
 
 ## 🟥 判断待ち
 - [ ] **日報テンプレ・営業実績管理**（⚠️今日10/6の日報・10/5分も未投稿）／今日の数字、Primus Partnersを受注1件に数えるか、烏有書痴を失注にするか、10/6単独か10/5と2本立てで出すかの4点を返す（Primusのキックオフは10/8 18:00）／https://claude.ai/code/session_01UBfZxqvXfewBRXP1uHRYVU
+- [ ] **日報追加：架電数**（⚠️今日10/6の日報）／架電数（10/6は51架電・目標400）は記入済み。日報の1つ目の項目の内容を送る（未達の理由・明日の対策を足すかも返す）／https://claude.ai/code/session_01CJgoa7v1qMDVAo5kymnC6T
 - [ ] **aio-target-lister.skill スキル登録**（⚠️期限: 10/2に上位3社へ連絡→過ぎています）／1社目への連絡文の下書きを作ってもらうか返す。Tier S〜Aから20社を選ぶ／https://claude.ai/code/session_01ErUc8MSuobUS3vw54iiVxW
 - [ ] **AIO受注20件の週間タスク**（今週分）／週次ログがまだ無いので、今週のタスク・担当・延ばすものを伝えて記録してもらう／https://claude.ai/code/session_01Ab9B6iAtybFhguxidp1Nrg
 - [ ] **業務のAI化・自動化アドバイス**／「所属の書き方」と「事例の裏取りルール」の2点を直すかどうか返す（9/3から返事待ち）／https://claude.ai/code/session_01TDhcQhdJ6SK2rgjj6ri2Wt
@@ -23,7 +24,7 @@
 ---
 
 ### 見直し用メモ（Claudeが使う）
-- 前回確認: 2026-10-06T09:35:00Z
+- 前回確認: 2026-10-06T10:35:00Z
 - 対象外: このセッション（session_01L9GcX3rTy1fQzpYTUgb3CJ）、自動で動いているだけのセッション
 - 各セッションの updated_at（次回はこれより新しいものだけ読む）:
   - session_01UBfZxqvXfewBRXP1uHRYVU 2026-10-06T09:33:19Z 🟥
@@ -35,3 +36,4 @@
   - session_01FaPKYpTnafSy28guMQb2so 2026-10-01T00:42:36Z ✅
   - session_01MkPgnRaShoGMa1BHyQHqTo 2026-09-10T05:14:36Z ✅
   - session_01Ab9B6iAtybFhguxidp1Nrg 2026-10-05T00:57:58Z 🟥
+  - session_01CJgoa7v1qMDVAo5kymnC6T 2026-10-06T10:32:15Z 🟥
